@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+    {% block content %}
+
+    <div class="container" style="padding-bottom: 1.5em;">
+        <h1 class="d-flex justify-content-center brand-colors">PYTUBE Downloader</h1>
+        <p class="d-flex justify-content-center">Download Youtube videos in MP4 for free</p>
+    </div>
+
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            {{ form.hidden_tag() }}
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <h2 class="d-flex justify-content-center brand-colors">Simple, like you want</h2>
+        <p class="d-flex justify-content-center">There're no secrets with&nbsp;<span class="logo-name">PYTUBE</span>, just download your video.</p>
+
+        <div class="card-group">
+
+            <div class="card">
+                <img src="static/img/convert.gif" class="card-img-top" alt="Convert">
+                <div class="card-body">
+                    <h4 class="card-text"> Simple to use </h4>
+                    <p class="card-text">Just type your video url and click "Convert". You're video will be available in a few seconds, so you can download it.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="static/img/money.gif" class="card-img-top" alt="Money">
+                <div class="card-body">
+                    <h4 class="card-text"> Don't pay a thing </h4>
+                    <p class="card-text">Pytube is a project used to develop my skills and it will be always free. All the processing is done with pytube library.</p>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="static/img/infinite.gif" class="card-img-top" alt="Infinite">
+                <div class="card-body">
+                    <h4 class="card-text"> Unlimited downloads </h4>
+                    <p class="card-text">Download as much as you want, whaterever you want - as long it's a youtube video, of course.</p>
+                </div>
+            </div>
+    
+        </div>
+
+    </div>
+
+    {% endblock content %}

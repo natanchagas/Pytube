@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+    {% block content %}
+
+    <div class="container">
+
+        {{ thumbnail }}
+
+        {{ title }}
+
+        <form>
+            <h2 class="text-center">Select the video resolution</h2>
+            <p class="text-center">Higher resolution means more details, but it will also result in increased file size.</p>
+            <fieldset id="video_options" class="form-check form-check-inline justify-content-center">
+                {% for option in video_options %}
+                    <input type="radio" id="{{ option | string }}p" name="resolution" value="{{ option | string }}p">
+                    <label for="{{ option | string }}p"> {{ option | string }}p </label><br>
+                {% endfor %}
+            </fieldset>
+
+            <br>
+            <br>
+
+            <h2 class="text-center">Select the audio quality</h2>
+            <p class="text-center">Higher quality means more clarity, but it will also result in increased file size.</p>
+            <fieldset id="audio_options" class="form-check form-check-inline justify-content-center">
+                {% for option in audio_options %}
+                    <input type="radio" id="{{ option | string }} Kbps" name="quality" value="{{ option | string }} Kbps">
+                    <label for="{{ option | string }} Kbps"> {{ option | string }} Kbps </label><br>
+                {% endfor %}
+            </fieldset>
+            <button>Confirm</button>
+        </form>
+    </div>
+
+    {% endblock content %}

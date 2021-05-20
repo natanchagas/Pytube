@@ -1,0 +1,48 @@
+.logo-img{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.logo-name {
+    display: inline;
+    font-size: 1em;
+}
+
+.brand-colors {
+    background: linear-gradient(to right, #f04563 , #f47638);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body {
+    font-family: 'Saira Extra Condensed', sans-serif;
+}
+
+h1 {
+    padding-top: 1em;
+}
+
+.container {
+    padding: 1.5em;
+}
+
+form {
+    width: -moz-available;
+}
+
+fieldset {
+    width: 100%;
+}
+
+label {
+    padding-right: 30px;
+}
+
+#submit {
+    border-color: #f04563;
+    color: #f04563;
+}
+
+.card {
+    margin: 20px;
+}
