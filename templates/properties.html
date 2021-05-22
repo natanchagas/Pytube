@@ -4,11 +4,17 @@
 
     <div class="container">
 
-        {{ thumbnail }}
+        <hr>
 
-        {{ title }}
+        <img class="center-item spotlight" src="{{ thumbnail }}">
+        
+        <br>
 
-        <form>
+        <h4 class="d-flex justify-content-center brand-colors"><b>{{ title }}</b></h4>
+
+        <hr>
+
+        <form action="{{ url_for('download', video = video) }}" method="post">
             <h2 class="text-center">Select the video resolution</h2>
             <p class="text-center">Higher resolution means more details, but it will also result in increased file size.</p>
             <fieldset id="video_options" class="form-check form-check-inline justify-content-center">
@@ -29,8 +35,13 @@
                     <label for="{{ option | string }} Kbps"> {{ option | string }} Kbps </label><br>
                 {% endfor %}
             </fieldset>
-            <button>Confirm</button>
+            
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-success center-item">Confirm</button>
         </form>
+
     </div>
 
     {% endblock content %}

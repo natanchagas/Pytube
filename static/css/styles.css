@@ -36,6 +36,14 @@ fieldset {
 
 label {
     padding-right: 30px;
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(244,118,56, 0), rgba(240, 69, 99, 0.75), rgba(244,118,56, 0));
 }
 
 #submit {
@@ -45,4 +53,13 @@ label {
 
 .card {
     margin: 20px;
+}
+
+.center-item {
+    margin: 0 auto 0 auto;
+    display: block;
+}
+
+.spotlight {
+    width: 310px;
 }

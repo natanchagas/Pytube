@@ -1,3 +1,4 @@
+import re
 from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap
 from forms import GetVideoForm
@@ -59,8 +60,19 @@ def properties(video):
     audio_quality.sort()
     video_resolution.sort()
 
-    return render_template('properties.html', video_options = video_resolution, audio_options = audio_quality, title = youtube_video.title, thumbnail = youtube_video.thumbnail_url)
+    return render_template('properties.html', video_options = video_resolution, audio_options = audio_quality, video = video, title = youtube_video.title, thumbnail = youtube_video.thumbnail_url)
 
-@app.route('/youtube/<video>/download')
+@app.route('/youtube/<video>/download', methods=['GET', 'POST'])
 def download(video):
+
+    print(request.form['resolution'], request.form['quality'], sep='\n')
+
+    for stream in YouTube('http://youtube.com/watch?v=' + video).streams:
+        if stream.resolution:
+            if stream.resolution == request.form['resolution']:
+                print(stream)
+        else:
+            if request.form['quality'].split(' Kbps')[0] in stream.abr:
+                print(stream)
+
     return 'Download video'
