@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+    {% block content %}
+
+    <div class="container">
+
+        <hr>
+
+        <img class="center-item spotlight" src="{{ thumbnail }}">
+        
+        <br>
+
+        <h4 class="d-flex justify-content-center brand-colors"><b>{{ title }}</b></h4>
+
+        <hr>
+
+        <h2 class="text-center">Download your video</h2>
+        <a class="text-center" style="display: block;" href="{{ url_for('download_file', video = video) }}"> {{ title }} </a>
+
+    </div>
+
+    {% endblock content %}
