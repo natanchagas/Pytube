@@ -96,8 +96,8 @@ def download(video):
         filename = video + '_audio'
     )
 
-    video_file = ffmpeg.input('./videos/raw/' + video + '_video.webm')
-    audio_file = ffmpeg.input('./videos/raw/' + video + '_audio.webm')
+    video_file = ffmpeg.input('./videos/raw/' + video + '_video')
+    audio_file = ffmpeg.input('./videos/raw/' + video + '_audio')
 
     ffmpeg.concat(video_file, audio_file, v=1, a=1).output('./videos/processed/' + video + '.mp4').run()
 
